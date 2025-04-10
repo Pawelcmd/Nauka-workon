@@ -77,3 +77,35 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('counter', entryCounter);
     counter.textContent = entryCounter;
 });
+
+
+
+const list = [-3, 5, 6];
+
+
+const some = list.some((el) => {
+    return el < 0
+})
+
+console.log(some);
+
+
+const namesList = ["Ania", "Hania", "Frania"];
+
+const reduceString = namesList.reduce((acc, el, index) => {
+    console.log(index);
+    if (index < namesList.length - 1) {
+        return acc + el + ", "
+    }else {
+        return acc + el;
+    }
+}, "")
+console.log(reduceString);
+
+const testString = "Dvcvcsvcdv"
+console.log(testString.toUpperCase());
+
+const capitalizedNames = namesList.map((el) => el.toUpperCase())
+console.log(capitalizedNames);
+
+
