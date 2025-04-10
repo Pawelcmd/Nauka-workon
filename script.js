@@ -32,6 +32,7 @@ input.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
         addItem();
     }
+    
 });
 
 
