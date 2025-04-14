@@ -8,35 +8,27 @@
     <link rel="stylesheet" href="style-pawel.css">
 </head>
 
-<body class="light">
-    <div id="container">
-        <div id="message">Witaj świecie</div>
-        <button id="changeBtn">Zmień</button>
-
-        <div style="margin-top: 40px">
-            <input type="text" id="itemInput" placeholder="Wpisz element" />
-            <button id="addBtn">Dodaj</button>
-            <ul id="itemList"></ul>
-        </div>
-
-
-        <span id="count">Liczba kliknięć </span>
-        <span id="numbers"></span>
-        <div id="container-btn">
-            <button id="btnCount">Klik</button>
-        </div>
-
-        </br>
-
-
-        <button id="themeToogle">Tryb ciemny</button>
-        </br></br>
-        <span id="counter"></span>
+<body>
+    <div class="container">
+        <h1>Lista użytkowników</h1>
+        <div id="loading" class="loading">Ładowanie danych...</div>
+        <div id="user-container" class="user-container"></div>
+        <div id="error-message" class="error-message"></div>
     </div>
 
+    <form id="postForm">
+        <div>
+            <label for="title">Tytuł</label>
+            <input type="text" id="title" name="title" required/>
+        </div>
+        <div>
+            <label for="body">Treść:</label>
+            <textarea id="body" name="body" rows="4" required></textarea>
+        </div>
+        <button type="submit">Wyślij post</button>
+    </form>
 
-
-
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="script.js"></script>
 </body>
 
