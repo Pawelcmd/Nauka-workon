@@ -32,6 +32,7 @@ input.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
         addItem();
     }
+
 });
 
 
@@ -45,3 +46,66 @@ btnCount.addEventListener('click', () => {
     clickCount++;
     numbers.textContent = clickCount
 })
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const body = document.body;
+    const button = document.querySelector('#themeToogle');
+
+    const setTheme = (theme) => {
+        body.classList.remove('light', 'dark');
+        body.classList.add(theme);
+        localStorage.setItem('theme', theme);
+        button.textContent = theme === 'light' ? 'Tryb ciemny' : 'Tryb jasny';
+    };
+
+    const savedTheme = localStorage.getItem('theme');
+    setTheme(savedTheme);
+
+    button.addEventListener('click', () => {
+        const newTheme = body.classList.contains('light') ? 'dark' : 'light';
+        setTheme(newTheme);
+    });
+
+
+    const counter = document.querySelector('#counter');
+
+    let entryCounter = parseInt(localStorage.getItem('counter')) || 0;
+
+    entryCounter++;
+    localStorage.setItem('counter', entryCounter);
+    counter.textContent = entryCounter;
+});
+
+
+
+const list = [-3, 5, 6];
+
+
+const some = list.some((el) => {
+    return el < 0
+})
+
+console.log(some);
+
+
+const namesList = ["Ania", "Hania", "Frania"];
+
+const reduceString = namesList.reduce((acc, el, index) => {
+    console.log(index);
+    if (index < namesList.length - 1) {
+        return acc + el + ", "
+    }else {
+        return acc + el;
+    }
+}, "")
+console.log(reduceString);
+
+const testString = "Dvcvcsvcdv"
+console.log(testString.toUpperCase());
+
+const capitalizedNames = namesList.map((el) => el.toUpperCase())
+console.log(capitalizedNames);
+
+
